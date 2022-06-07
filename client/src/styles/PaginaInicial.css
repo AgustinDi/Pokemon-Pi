@@ -1,0 +1,48 @@
+#inicio {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#inicioFix {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#contenedorInicial {
+    background-color: var(--mainColor-4);
+    width: min-content;
+    height: min-content;
+    display: flex;
+    padding: 15px;
+    border-radius: 30px;
+    border: rgb(240, 240, 240)2px solid;
+}
+
+#contenedorEntrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#entrar {
+    background-color: var(--orange);
+    border: var(--blue) 3px solid;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+}
+
+#entrar:hover {
+    cursor: pointer;
+}
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/002/006/728/non_2x/abstract-geometric-texture-dark-background-illustration-vector.jpg');
+    background-size: cover;
+}

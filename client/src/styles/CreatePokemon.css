@@ -1,0 +1,102 @@
+#fixCreate {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: var(--white);
+}
+
+#createPokemon {
+    color: var(--white);  /* color white all*/
+    display:flex;
+    flex-direction: column;
+    background-color: var(--cardColor);
+    width: min-content;
+    border: var(--white) 1px solid;
+    border-radius: 13px;
+    padding: 8px;
+}
+
+#formRange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    padding-bottom: 0;
+}
+
+#formRange div p {
+    display: inline-block;
+    width: 100px;
+    margin: 2px;
+}
+
+#formRange div span {
+    justify-content: center;
+    align-items: center;
+}
+
+#formRange p {
+    margin: 1px 0;
+}
+
+#formRange div {
+    width: 280px;
+    padding-bottom: 2px;
+}
+
+#formRange div:last-child {
+    align-items: end;
+}
+
+.incomplete {
+    width: 100% !important;
+    color: brown;
+}
+
+#lastButtons {
+    display: flex;
+    justify-content: space-between !important;
+}
+
+.inputText {
+    height: 25px;
+    background-color: var(--mainColor-2);
+    border-radius: 5px;
+    border: grey 1px solid;
+    color: var(--white);
+}
+
+.inputType {
+    background-color: var(--mainColor-2);
+    border-radius: 5px;
+    border: grey 1px solid;
+    color: var(--white);
+    margin: 5px 0 5px 5px;
+    font-size: 14px
+}
+
+.button {
+    font-size: 16px;
+    margin: 5px;
+}
+
+.lessMargin {
+    margin-bottom: 12px;
+}
+
+
+
+.inputText:-webkit-autofill,
+.inputText:-webkit-autofill:hover, 
+.inputText:-webkit-autofill:focus, 
+.inputText:-webkit-autofill:active{  /* Sacado de internet */
+    box-shadow: 0 0 0 30px var(--mainColor-2) inset !important;
+}
+.inputText:-webkit-autofill{
+    -webkit-text-fill-color: var(--white) !important;
+}

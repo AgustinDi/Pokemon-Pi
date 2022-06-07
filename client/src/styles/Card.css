@@ -1,0 +1,30 @@
+.cardBorder {
+    margin: 10px 30px
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+
+    height: 250px;
+    width: 180px;
+    background-color: var(--cardColor);
+    color: white;
+    border: white 1.4px solid;
+    border-radius: 12px;
+}
+.Card:hover {
+    box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.73);
+    transition: all 200ms ease;
+}
+
+.cardText {
+    margin-bottom: 10px;
+}
+
+.cardImg {
+    max-width: 120px;
+    max-height: 140px;
+}

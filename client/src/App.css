@@ -1,0 +1,22 @@
+:root {
+  --mainColor-1: rgb(12,12,12);
+  --mainColor-2: rgb(18,18,18);
+  --mainColor-3: rgb(20,20,20);
+  --mainColor-4: rgb(32,32,32);
+  --cardColor: rgb(40, 45, 50);
+  --orange: rgb(255, 196, 0);
+  --blue: rgb(25, 85, 158);
+  --white: rgb(230, 230, 230);
+}
+
+.button {
+  background-color: var(--orange);
+  border: var(--blue) 2px solid;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 28px;
+}
+
+.button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+#main, #all {
+    color: var(--white);
+    
+}
+
+#all {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    background-color: var(--cardColor);
+    height: min-content;
+    width: min-content;
+    border: var(--white) 1px solid;
+    border-radius: 13px;
+    padding: 13px 10px 5px 13px;
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#leftInfo, #rightInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#leftInfo {
+    width: 150px;
+}
+
+#rightInfo {
+    justify-content: space-between;
+}
+
+#leftInfo h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#leftInfo h4 {
+    margin: 2px 0
+}
+
+#info div p {
+    margin: 5px;
+    margin-left: 0px;
+}
+
+#img {
+    height: 210px;
+    min-width: min-content;
+}
+
+#types {
+    text-align: center;
+}
+
+#home {
+    text-align: center;
+    margin-top: 3px;
+}
+
+.button:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,66 @@
+#nav {
+    background-color: var(--mainColor-4);
+    border-bottom: white 1px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space;
+    height: min-content;
+}
+
+.filterBar {
+    text-align: center;
+    justify-content: center;
+}
+
+#createBar {
+    text-align: end;
+    justify-content: end;
+}
+
+#createButton {
+    margin-right: 20px;
+}
+
+#searchInput {
+    background-color: var(--mainColor-1);
+    border-radius: 5px;
+    border: grey 1px solid;
+    height: 25px;
+    margin-left: 15px;
+    margin-right: 2px;
+    color: white
+}
+
+.heightInputs {
+    background-color: var(--mainColor-1);
+    border-radius: 5px;
+    border: grey 1px solid;
+    margin-right: 10px;
+    height: 29px;
+    color: var(--white);
+}
+
+#formFilterInputs *:hover {
+    cursor: pointer;
+}
+
+#notFound h2 {
+    color: var(--white);
+}
+
+.fixHeight {
+    margin-top: 10px;
+}
+
+
+
+
+#searchInput:-webkit-autofill,
+#searchInput:-webkit-autofill:hover, 
+#searchInput:-webkit-autofill:focus, 
+#searchInput:-webkit-autofill:active{  /* Sacado de internet */
+    box-shadow: 0 0 0 30px var(--mainColor-1) inset !important;
+}
+#searchInput:-webkit-autofill{
+    -webkit-text-fill-color: var(--white) !important;
+}

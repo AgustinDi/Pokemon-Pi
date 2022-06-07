@@ -1,0 +1,16 @@
+#topNav {
+    display: block;
+    background-color: var(--mainColor-4);
+}
+
+#mainTitle:hover {
+    cursor: pointer;
+}
+
+#mainTitle {
+    width: 300px;
+}
+
+.border {
+    border-bottom: var(--white) 1px solid;
+}

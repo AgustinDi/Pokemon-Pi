@@ -1,0 +1,37 @@
+#cardsMain {
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardsContainer {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#pages {
+    display: flex;
+    border: var(--white) 1px solid;
+    border-radius: 0px 0px 5px 5px;
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    height: 20px;
+}
+
+#pages * {
+    background-color: var(--mainColor1);
+    color: var(--white);
+    border: none;
+    border-right: var(--white) 1px dotted;
+}
+
+#pages *:hover {
+    cursor: pointer;
+}
+
+#pages button:last-child {
+    border-right: none;
+}
