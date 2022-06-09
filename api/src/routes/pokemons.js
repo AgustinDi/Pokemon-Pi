@@ -6,7 +6,6 @@ let router = Router();
 
 
 router.get('/', async (req, res, next) => {
-    console.log('x name')
     const { name } = req.query;
     Pokemon.findOne({where:{name: name},include: Type}).then(poke=>{
         let types;
@@ -39,7 +38,6 @@ router.get('/', async (req, res, next) => {
 })
 
 router.get('/', async (req, res, next) => {
-    console.log('x all')
     let resultApi = await axios('https://pokeapi.co/api/v2/pokemon/?offset=00&limit=100')
         .then(r=> r.data.results)
 
