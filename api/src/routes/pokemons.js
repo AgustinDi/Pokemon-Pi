@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
             types
             }
     }).then(r=>res.send(r),
-        ()=>{ //Si hay un error, o sea, no se encuentra se busca el nombre en la api.
+        ()=>{
             if(!name) return next();
             axios("https://pokeapi.co/api/v2/pokemon/" + name)
             .then(r=>{
@@ -33,12 +33,12 @@ router.get('/', async (req, res, next) => {
                     img: r.data.sprites.other.dream_world.front_default,
                     type
                 })},
-        (e)=>next(e));//res.status(404).send('Error, el parametro enviado es inválido.'));
+        (e)=>next(e));
     });
 })
 
 router.get('/', async (req, res, next) => {
-    let resultApi = await axios('https://pokeapi.co/api/v2/pokemon/?offset=00&limit=100')
+    let resultApi = await axios('https://pokeapi.co/api/v2/pokemon/?offset=00&limit=40')
         .then(r=> r.data.results)
 
     let resultDb = await Pokemon.findAll({include: Type}).then(pokes=> {return pokes.map(poke => {
@@ -54,56 +54,6 @@ router.get('/', async (req, res, next) => {
         }
     })});
     res.send([resultApi,resultDb]);
-
-    //ANTES LO RESOLVIA ASI, ESPERANDO A QUE TODOS SE COMPLETEN EN EL BACKEND, DECIDI CAMBIARLO PORQUE LLEGABA A ESPERAR 1MIN 
-    //HASTA QUE ME LLEGABAN TODOS LOS POKEMONS COMO LOS NECESITABA.
-    //LLAMANDO DESDE EL FRONTEND EL DIBUJO ES MUCHO MAS RAPIDO.
-
-    // try{    
-    // const pokemons1 = await getPokemonsByAPI(url1);
-    // const pokemons2 = await getPokemonsByAPI(url2);
-    // let result = pokemons1.concat(pokemons2);
-    // await Pokemon.findAll({include: Type}).then(pokes=> pokes.forEach(poke => {
-    //     let { id, name, img, types} = poke.dataValues;
-    //     types[1] ? types[1] = poke.dataValues.types[1].dataValues.name : null;
-    //     types[0] = poke.dataValues.types[0].dataValues.name;
-    //     result.push({
-    //         id,
-    //         name,
-    //         img,
-    //         types
-    //     })
-    // }));
-    // Promise.all(result).then(r=> res.json(r));
-    // }catch(e){
-    //     next(e);
-    // }
-
-    //-----------FUNCTIONS Y URLS---------------//
-
-    // let url1 = 'https://pokeapi.co/api/v2/pokemon/?offset=00&limit=20';
-    // let url2 = 'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20';
-
-    // async function getPokemonsByAPI (url){
-    //     let pokemons = await axios(url)
-    //     .then(r=> r.data.results).catch(e=>console.log(e))
-
-    //     let result = pokemons.map(poke => {
-    //     return axios(poke.url)
-    //             .then(r=> {
-    //         let type = [r.data.types[0].type.name];
-    //         r.data.types[1] ? type.push(r.data.types[1].type.name) : null;
-    //         return {
-    //         id: r.data.id,
-    //         name: poke.name,
-    //         img: r.data.sprites.front_default,
-    //         type
-    //         }
-    //     },error=>{
-    //         return undefined;
-    //     })})
-    //     return Promise.all(result);
-    // }
 })
 
 router.get('/:idPokemon', async (req, res, next) => {

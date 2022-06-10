@@ -42,9 +42,8 @@ export default function DetailedPokemon() {
         </div>
     )
 
-    if (Object.keys(pokemon).length !== 0 && img) return (
+    if (Object.keys(pokemon).length !== 0) return (
         <div id='all'>
-            {console.log(pokemon)}
             <h2 id='title'>Detalle del Pokémon:</h2>
             <div id='main'>
                 <div id='info'>

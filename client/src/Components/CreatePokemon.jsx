@@ -92,11 +92,14 @@ export default function CreatePokemon() {
 
         if (error) return;
 
+
         let newPokemon = {
             ...data,
             name: name.name,
-            img: img.img
         };
+
+        if(img.img.length !== 0) newPokemon.img = img.img;
+
         newPokemon.type = [];
         if (type.type1 === type.type2) {
             newPokemon.type.push(type.type1);
@@ -110,6 +113,7 @@ export default function CreatePokemon() {
                 dispatch(createPokemon(newPokemon))
                 setSended(true)
             })
+            .catch(r=>console.log(r))
     }
 
     //Reset all local states
