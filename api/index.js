@@ -24,16 +24,38 @@ const axios = require('axios');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT ? process.env.PORT : 3001, async () => {
+  server.listen(3001, async () => {
+    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    //PRUEBAS INICIALES:
+
     try {
       //Me traigo todos los tipos de pokemons.
       const types = await axios('https://pokeapi.co/api/v2/type')
         .then(r=> r.data.results.map(x=>{return {name: x.name}}));
-        if(Type.findAll().length === types.length) return;  //ver esto.
-        console.log(process.env.PORT)
-      return await Type.bulkCreate(types);
+      
+      //Subo los tipos a la bd.
+      await Type.bulkCreate(types);
+  
+      console.log('finished')
+      
     } catch (error) {
       console.log(error)
     }
+
   });
 });
+
+
+// conn.sync({ force: true }).then(() => {
+//   server.listen(process.env.PORT ? process.env.PORT : 3001, async () => {
+//     try {
+//       //Me traigo todos los tipos de pokemons.
+//       const types = await axios('https://pokeapi.co/api/v2/type')
+//         .then(r=> r.data.results.map(x=>{return {name: x.name}}));
+//         if(Type.findAll().length === types.length) return;  //ver esto.
+//       return await Type.bulkCreate(types);
+//     } catch (error) {
+//       console.log(error)
+//     }
+//   });
+// });

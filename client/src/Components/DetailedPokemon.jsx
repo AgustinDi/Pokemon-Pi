@@ -12,7 +12,7 @@ export default function DetailedPokemon() {
 
 
     useEffect(() => {
-        axios('/pokemons/' + id)
+        axios('http://localhost:3001/pokemons/' + id)
             .then(r => {
                 setPokemon(r.data)
             })
