@@ -24,12 +24,13 @@ const axios = require('axios');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, async () => {
+  server.listen(process.env.PORT ? process.env.PORT : 3001, async () => {
     try {
       //Me traigo todos los tipos de pokemons.
       const types = await axios('https://pokeapi.co/api/v2/type')
         .then(r=> r.data.results.map(x=>{return {name: x.name}}));
         if(Type.findAll().length === types.length) return;  //ver esto.
+        console.log(process.env.PORT)
       return await Type.bulkCreate(types);
     } catch (error) {
       console.log(error)
