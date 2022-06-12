@@ -6,7 +6,7 @@ function readPokemonDb(dispatch,pokeArr){
 
 export function getPokemons(){
     return(dispatch)=>{
-        return  axios('http://localhost:3001/pokemons/')
+        return  axios('/pokemons/')
                     .then(r=> {
                         if(r.data[1].length !== 0) readPokemonDb(dispatch,r.data[1]);
                         return dispatch({type: 'GET_ALL_POKEMONS',payload: r.data[0]});
@@ -41,7 +41,7 @@ export function createPokemon(pokemon){
 
 export function getTypes(){
     return(dispatch)=>{
-        return  axios('http://localhost:3001/types')
+        return  axios('/types')
             .then(r=> {
                 let payload = r.data;
                 payload.pop()

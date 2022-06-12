@@ -107,7 +107,7 @@ export default function CreatePokemon() {
             if (type.type1 !== '...') newPokemon.type[0] = type.type1;
             if (type.type2 !== '...') newPokemon.type.push(type.type2);
         }
-        axios.post('http://localhost:3001/pokemons/', newPokemon)
+        axios.post('/pokemons/', newPokemon)
             .then(r => {
                 newPokemon.id = r.data.id;
                 dispatch(createPokemon(newPokemon))
