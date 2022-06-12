@@ -9,10 +9,10 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.get('/pokemonss',async (req,res,next) => {
-    axios('https://pokeapi.co/api/v2/pokemon/?offset=00&limit=40')
-        .then(r=>r.data.results)
-        .then(r=>res.send(r)).catch(e=>next(e))
+router.get('/',async (req,res,next) => {
+    let result = 'did it';
+    console.log(result)
+    res.send(result);
 })
 
 router.use('/pokemons', pokemonsMiddleware)
