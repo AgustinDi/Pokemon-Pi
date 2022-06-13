@@ -67,7 +67,7 @@ export default function Cards() {
         )
     } else return (
         <div>
-            Cargando...
+            <h2 id='loading'>Cargando...</h2>
         </div>
     )
 }

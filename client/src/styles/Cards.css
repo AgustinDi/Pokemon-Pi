@@ -35,3 +35,7 @@
 #pages button:last-child {
     border-right: none;
 }
+
+#loading {
+    color: var(--white);
+}
