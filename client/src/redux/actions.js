@@ -7,9 +7,10 @@ function readPokemonDb(dispatch,pokeArr){
 
 export function getPokemons(){
     return(dispatch)=>{
+        axios('/pokemons').then(r=>console.log(r))
+        axios('/types').then(r=>console.log(r))
         return  axios('/pokemons/')
                     .then(r=> {
-                        console.log(r)
                         if(r.data[1].length !== 0) readPokemonDb(dispatch,r.data[1]);
                         return dispatch({type: 'GET_ALL_POKEMONS',payload: r.data[0]});
             })}
