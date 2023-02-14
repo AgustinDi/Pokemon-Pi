@@ -16,6 +16,7 @@ export default function HomePage() {
         if (allPokemons.length === 0 && urlsPokemons.length === 0 && allTypes.length === 0) {
             dispatch(getTypes());
             dispatch(getPokemons());
+            //u
         }
         if (urlsPokemons.length > 0) {
             while (urlsPokemons.length > 0) {
