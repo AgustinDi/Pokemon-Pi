@@ -13,7 +13,6 @@ export default function HomePage() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('https://pokemon-pi-production-038d.up.railway.app/pokemons').then(response => response.json()).then(r=>{console.log(r);alert(r)})
         if (allPokemons.length === 0 && urlsPokemons.length === 0 && allTypes.length === 0) {
             dispatch(getTypes());
             dispatch(getPokemons());
