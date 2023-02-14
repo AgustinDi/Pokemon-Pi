@@ -6,7 +6,7 @@ import { sortAsc, sortAtt, sortDes } from "./functions";
 import Cards from "./Cards";
 import Card from "./Card";
 import '../styles/HomePage.css';
-import axios from axios;
+import axios from "axios";
 
 export default function HomePage() {
     //llamada a todos los pokemons
