@@ -9,7 +9,10 @@ export function getPokemons(){
     return(dispatch)=>{
         axios('/pokemons').then(r=>console.log(r))
         axios('/types').then(r=>console.log(r))
-        return  axios('/pokemons/')
+        return  axios('/pokemons/',{ headers: {
+            'content-type': 'application/json',
+            'accept': 'application/json'
+          }})
                     .then(r=> {
                         if(r.data[1].length !== 0) readPokemonDb(dispatch,r.data[1]);
                         return dispatch({type: 'GET_ALL_POKEMONS',payload: r.data[0]});
