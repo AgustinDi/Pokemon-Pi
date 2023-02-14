@@ -12,8 +12,6 @@ dotenv.config();
 
 axios.defaults.baseURL = process.env.REACT_APP_API || "https://localhost:3001";
 
-console.log(process.env.REACT_APP_API)
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

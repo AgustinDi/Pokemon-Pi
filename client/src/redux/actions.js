@@ -1,6 +1,7 @@
 import axios from "axios";
 
 function readPokemonDb(dispatch,pokeArr){
+    console.log(pokeArr)
     pokeArr.forEach(poke=> dispatch({type:'READ_POKEMON', payload: poke}))
 }
 
@@ -8,6 +9,7 @@ export function getPokemons(){
     return(dispatch)=>{
         return  axios('/pokemons/')
                     .then(r=> {
+                        console.log(r)
                         if(r.data[1].length !== 0) readPokemonDb(dispatch,r.data[1]);
                         return dispatch({type: 'GET_ALL_POKEMONS',payload: r.data[0]});
             })}
@@ -43,6 +45,7 @@ export function getTypes(){
     return(dispatch)=>{
         return  axios('/types')
             .then(r=> {
+                console.log(r.data)
                 let payload = r.data;
                 payload.pop()
                 dispatch({type: 'GET_ALL_TYPES',payload})
