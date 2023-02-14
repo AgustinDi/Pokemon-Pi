@@ -6,7 +6,7 @@ import { sortAsc, sortAtt, sortDes } from "./functions";
 import Cards from "./Cards";
 import Card from "./Card";
 import '../styles/HomePage.css';
-import axios from "axios";
+import fetch from "fetch";
 
 export default function HomePage() {
     //llamada a todos los pokemons
@@ -14,7 +14,7 @@ export default function HomePage() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        axios('/pokemons').then(r=>{console.log(r);alert(r)})
+        fetch('https://pokemon-pi-production-038d.up.railway.app/pokemons').then(response => response.json()).then(r=>{console.log(r);alert(r)})
         if (allPokemons.length === 0 && urlsPokemons.length === 0 && allTypes.length === 0) {
             dispatch(getTypes());
             dispatch(getPokemons());
