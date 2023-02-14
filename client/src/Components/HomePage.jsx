@@ -6,7 +6,6 @@ import { sortAsc, sortAtt, sortDes } from "./functions";
 import Cards from "./Cards";
 import Card from "./Card";
 import '../styles/HomePage.css';
-import fetch from "fetch";
 
 export default function HomePage() {
     //llamada a todos los pokemons
