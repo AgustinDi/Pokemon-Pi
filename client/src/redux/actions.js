@@ -7,7 +7,7 @@ function readPokemonDb(dispatch,pokeArr){
 
 export function getPokemons(){
     return(dispatch)=>{
-        return  axios('/pokemons/')
+        return  axios('/pokemons')
                     .then(r=> {
                         console.log(r)
                         if(r.data[1].length !== 0) readPokemonDb(dispatch,r.data[1]);
